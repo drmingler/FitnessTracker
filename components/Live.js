@@ -71,7 +71,6 @@ class Live extends React.Component {
   }
 
   render() {
-      console.log(this.state);
       const {coords, status, direction, bounceValue} = this.state;
       if (status === null) {
           return (

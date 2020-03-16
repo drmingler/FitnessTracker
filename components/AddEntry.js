@@ -9,7 +9,9 @@ import {
 import {
   getMetricMetaInfo,
   timeToString,
-  getDailyReminderValue
+  getDailyReminderValue,
+  setLocalNotification,
+  clearLocalNotification,
 } from "../utils/helpers";
 import UdaciSlider from "./UdaciSlider";
 import UdaciSteppers from "./UdaciSteppers";
@@ -20,7 +22,7 @@ import {submitEntry, removeEntry} from "../utils/api";
 import {connect} from "react-redux";
 import {addEntry} from "../actions";
 import {purple, white} from "../utils/colors";
-import {NavigationActions} from "react-navigation";
+
 
 function SubmitBtn({onPress}) {
   return (
@@ -85,6 +87,8 @@ class AddEntry extends Component {
     // Navigate to home
     // this.toHome()
     this.toHome();
+    clearLocalNotification()
+        .then(setLocalNotification);
 
     submitEntry({key, entry});
 

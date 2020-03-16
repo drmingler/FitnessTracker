@@ -14,14 +14,15 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import EntryDetail from "./components/EntryDetail";
-import Live from "./components/Live"
+import Live from "./components/Live";
+import {setLocalNotification} from './utils/helpers';
 
 function MyStatusBar({backgroundColor, ...props}) {
-  return (
-      <View style={{backgroundColor, height: Constants.statusBarHeight}}>
-        <StatusBar translucent backgroundColor={backgroundColor} {...props} />
-      </View>
-  );
+    return (
+        <View style={{backgroundColor, height: Constants.statusBarHeight}}>
+            <StatusBar translucent backgroundColor={backgroundColor} {...props} />
+        </View>
+    );
 }
 
 const Stack = createStackNavigator();
@@ -55,18 +56,24 @@ function MyStack() {
   );
 }
 
+
 export default class App extends React.Component {
-  render() {
-    const Tab =
-        Platform.OS === "ios"
-            ? createBottomTabNavigator()
-            : createMaterialTopTabNavigator();
-    return (
-        <Provider store={createStore(reducer)}>
-          <View style={{flex: 1}}>
-            <MyStatusBar backgroundColor={purple} barStyle={"light-content"}/>
-            <NavigationContainer>
-              <Tab.Navigator
+
+    componentDidMount() {
+        setLocalNotification()
+    }
+
+    render() {
+        const Tab =
+            Platform.OS === "ios"
+                ? createBottomTabNavigator()
+                : createMaterialTopTabNavigator();
+        return (
+            <Provider store={createStore(reducer)}>
+                <View style={{flex: 1}}>
+                    <MyStatusBar backgroundColor={purple} barStyle={"light-content"}/>
+                    <NavigationContainer>
+                        <Tab.Navigator
                   screenOptions={({route}) => ({
                     tabBarIcon: ({color, size}) => {
                       let icon;
