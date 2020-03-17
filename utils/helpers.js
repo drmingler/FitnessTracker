@@ -6,7 +6,8 @@ import {
     MaterialCommunityIcons
 } from "@expo/vector-icons";
 import {red, orange, blue, lightPurp, pink, white} from "./colors";
-import {Notifications, Permissions} from "expo";
+import {Notifications} from "expo";
+import * as Permissions from "expo-permissions";
 
 const NOTIFICATION_KEY = "UdaciFitness:notifications";
 

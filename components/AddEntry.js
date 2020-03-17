@@ -11,7 +11,7 @@ import {
   timeToString,
   getDailyReminderValue,
   setLocalNotification,
-  clearLocalNotification,
+  clearLocalNotification
 } from "../utils/helpers";
 import UdaciSlider from "./UdaciSlider";
 import UdaciSteppers from "./UdaciSteppers";
