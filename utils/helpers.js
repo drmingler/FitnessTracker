@@ -150,7 +150,7 @@ export function timeToString(time = Date.now()) {
     return todayUTC.toISOString().split("T")[0];
 }
 
-function clearLocalNotification() {
+export function clearLocalNotification() {
     return AsyncStorage.removeItem(NOTIFICATION_KEY).then(
         Notifications.cancelAllScheduledNotificationsAsync
     );
