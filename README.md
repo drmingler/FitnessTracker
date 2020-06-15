@@ -1,7 +1,7 @@
 # FitnessTracker
 Keep Track Of Your Daily Activities 
 
-A mobile application (Android or iOS - or both) that allows users to keep track of their daily activities, such as running, sleeping, biking etc. While running or swiming or even walking it gives you informations about your current position.
+A mobile application (Android or iOS - or both) that allows users to keep track of their daily activities, such as running, sleeping, biking etc. While running or swimming or even walking it gives you information about your current position.
 
 ## Getting Start
 This App has been tested on both Android and iOS.
