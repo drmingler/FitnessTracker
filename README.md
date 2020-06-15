@@ -12,7 +12,7 @@ Make sure you have Git and Node installed, before you proceed.
 #### 1. Clone the repository to your local machine
 To clone and run this application, you will need Git installed on your computer.
 ```
-$ git clone https://github.com/drmingler/Mobile-FlashCards.git
+$ git clone https://github.com/drmingler/FitnessTracker.git
 ```
 #### 2. Run "npm install" in your local repository's folder
 To install dependencies, from within the project directory:
